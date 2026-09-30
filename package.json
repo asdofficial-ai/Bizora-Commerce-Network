@@ -1,14 +1,14 @@
 {
   "name": "bizora-commerce-network",
   "private": true,
-  "version": "0.75.1",
+  "version": "1.0.0-inspection",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "start": "node -e \"if(!process.env.JWT_SECRET||!process.env.SUPPORT_AGENT_KEY){console.error('Missing required production secrets');process.exit(1)}\" && node server-v75.js",
-    "check:server": "node --check server-v75.js"
+    "start": "node -e \"if(!process.env.JWT_SECRET||!process.env.SUPPORT_AGENT_KEY||!process.env.ADMIN_KEY){console.error('Missing required production secrets');process.exit(1)}\" && node server-final.js",
+    "check:server": "node --check server-final.js"
   },
   "dependencies": {
     "@vitejs/plugin-react": "latest",
