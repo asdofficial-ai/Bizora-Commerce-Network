@@ -1,0 +1,18 @@
+.support-bot-wrap{position:fixed;right:24px;bottom:24px;z-index:120;display:grid;justify-items:end;pointer-events:none}
+.support-bot-button{position:relative;width:112px;min-height:132px;border:0;background:transparent;color:white;padding:0;pointer-events:auto;display:grid;justify-items:center;align-content:end;filter:drop-shadow(0 16px 26px rgba(0,0,0,.38));-webkit-tap-highlight-color:transparent}
+.support-bot-button:focus-visible{outline:2px solid #63d9ff;outline-offset:5px;border-radius:28px}
+.support-bot-glow{position:absolute;width:96px;height:96px;bottom:28px;border-radius:50%;background:radial-gradient(circle,rgba(66,207,255,.33),rgba(84,70,255,.15) 48%,transparent 72%);filter:blur(8px);animation:supportGlow 4.6s ease-in-out infinite;pointer-events:none}
+.support-bot-image{position:relative;width:104px;height:104px;object-fit:cover;border-radius:50%;border:1px solid rgba(112,213,255,.32);box-shadow:0 0 0 1px rgba(116,99,255,.12),0 0 28px rgba(58,155,255,.28);transform-origin:50% 72%;animation:supportTurn 9s ease-in-out infinite;will-change:transform;pointer-events:none}
+.support-bot-label{position:relative;margin-top:-3px;padding:6px 10px;border-radius:999px;background:rgba(8,19,35,.88);border:1px solid rgba(98,196,255,.22);backdrop-filter:blur(10px);font-size:10px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#cdeeff;box-shadow:0 8px 22px rgba(0,0,0,.26)}
+.support-bot-button:hover .support-bot-image{animation-play-state:paused;transform:perspective(500px) rotateY(-8deg) rotateZ(-1deg) scale(1.035)}
+.support-bot-button:active .support-bot-image{animation-play-state:paused;transform:scale(.94)}
+.support-bot-bubble{pointer-events:none;margin:0 4px 8px 0;background:rgba(10,22,39,.94);border:1px solid rgba(102,204,255,.23);box-shadow:0 14px 38px rgba(0,0,0,.35);backdrop-filter:blur(14px);color:#eef8ff;font-size:12px;font-weight:700;padding:9px 12px;border-radius:14px 14px 4px 14px;animation:supportBubble .28s ease-out both;max-width:150px}
+.role-picker{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px}
+.role-picker button{border:1px solid var(--line);background:#0a1424;color:#98a6ba;padding:12px;border-radius:11px}
+.role-picker button.active{background:linear-gradient(135deg,#7463ff,#5578ff);border-color:transparent;color:white}
+.role-picker::after{content:'Use Merchant only if you sell products or offer services.';grid-column:1/-1;color:#78889e;font-size:10px;line-height:1.45;padding:2px 2px 0}
+@keyframes supportTurn{0%,16%,100%{transform:perspective(500px) rotateY(0deg) rotateZ(0deg) scale(1)}31%{transform:perspective(500px) rotateY(8deg) rotateZ(-1.2deg) scale(1.01)}48%{transform:perspective(500px) rotateY(-7deg) rotateZ(1.1deg) scale(1)}66%{transform:perspective(500px) rotateY(4deg) rotateZ(-.4deg) scale(1.015)}82%{transform:perspective(500px) rotateY(0deg) rotateZ(0deg) scale(1)}}
+@keyframes supportGlow{0%,100%{opacity:.62;transform:scale(.94)}50%{opacity:1;transform:scale(1.05)}}
+@keyframes supportBubble{from{opacity:0;transform:translateY(5px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
+@media(max-width:680px){.support-bot-wrap{right:12px;bottom:14px}.support-bot-button{width:88px;min-height:108px}.support-bot-image{width:82px;height:82px}.support-bot-glow{width:76px;height:76px;bottom:27px}.support-bot-label{font-size:9px;padding:5px 8px}.support-bot-bubble{font-size:11px;max-width:126px;margin-right:2px}.role-picker::after{font-size:9.5px}}
+@media(prefers-reduced-motion:reduce){.support-bot-image,.support-bot-glow,.support-bot-bubble{animation:none!important}}
