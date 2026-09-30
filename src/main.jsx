@@ -1,13 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
-import App75 from './App75.jsx'
+import AppV75 from './AppV75.jsx'
 import './styles75.css'
+import './support.css'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
-      <App75 />
+      <AppV75 />
     </BrowserRouter>
   </React.StrictMode>,
 )
