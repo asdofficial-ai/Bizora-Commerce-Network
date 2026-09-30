@@ -26,3 +26,19 @@ jobs:
         run: npm run check:server
       - name: Build application
         run: npm run build
+      - name: End-to-end marketplace smoke test
+        shell: bash
+        run: |
+          export JWT_SECRET="ci-jwt-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          export SUPPORT_AGENT_KEY="ci-support-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}"
+          export SMOKE_PASSWORD="Smoke-${GITHUB_RUN_ID}-${GITHUB_RUN_ATTEMPT}-Pass"
+          export PORT=10000
+          node server-v1.js > /tmp/bizora-v1.log 2>&1 &
+          SERVER_PID=$!
+          cleanup() { kill "$SERVER_PID" 2>/dev/null || true; }
+          trap cleanup EXIT
+          for i in {1..20}; do
+            if curl -fsS http://127.0.0.1:10000/api/health >/dev/null; then break; fi
+            sleep 1
+          done
+          node scripts/smoke-v1.mjs
