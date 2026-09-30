@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "start": "node -e \"if(!process.env.JWT_SECRET||!process.env.SUPPORT_AGENT_KEY||!process.env.ADMIN_KEY){console.error('Missing required production secrets');process.exit(1)}\" && node server-final.js",
+    "start": "node -e \"if(!process.env.JWT_SECRET||!process.env.SUPPORT_AGENT_KEY){console.error('Missing required production secrets');process.exit(1)}\" && node server-final.js",
     "check:server": "node --check server-final.js"
   },
   "dependencies": {
