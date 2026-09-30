@@ -11,6 +11,7 @@
 .role-picker button{border:1px solid var(--line);background:#0a1424;color:#98a6ba;padding:12px;border-radius:11px}
 .role-picker button.active{background:linear-gradient(135deg,#7463ff,#5578ff);border-color:transparent;color:white}
 .role-picker::after{content:'Use Merchant only if you sell products or offer services.';grid-column:1/-1;color:#78889e;font-size:10px;line-height:1.45;padding:2px 2px 0}
+.footer-inner>span:last-child{font-size:0}.footer-inner>span:last-child::after{content:'V1 • Inspection build';font-size:10px}
 @keyframes supportTurn{0%,16%,100%{transform:perspective(500px) rotateY(0deg) rotateZ(0deg) scale(1)}31%{transform:perspective(500px) rotateY(8deg) rotateZ(-1.2deg) scale(1.01)}48%{transform:perspective(500px) rotateY(-7deg) rotateZ(1.1deg) scale(1)}66%{transform:perspective(500px) rotateY(4deg) rotateZ(-.4deg) scale(1.015)}82%{transform:perspective(500px) rotateY(0deg) rotateZ(0deg) scale(1)}}
 @keyframes supportGlow{0%,100%{opacity:.62;transform:scale(.94)}50%{opacity:1;transform:scale(1.05)}}
 @keyframes supportBubble{from{opacity:0;transform:translateY(5px) scale(.97)}to{opacity:1;transform:translateY(0) scale(1)}}
