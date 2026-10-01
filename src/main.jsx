@@ -13,6 +13,7 @@ import { AuthProvider } from './AuthContext.jsx'
 import './styles75.css'
 import './support.css'
 import './v1-marketplace.css'
+import './emerald-theme.css'
 
 function Root() {
   const { pathname } = useLocation()
