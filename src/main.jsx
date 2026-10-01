@@ -13,33 +13,33 @@ import './styles75.css'
 import './support.css'
 import './v1-marketplace.css'
 
-function FinalRoute({children}) {
-  return <AuthProvider>{children}<SupportBot /></AuthProvider>
-}
-
 function Root() {
   const { pathname } = useLocation()
-  if (pathname === '/support') return <AuthProvider><SupportExperience /></AuthProvider>
-  if (pathname === '/account') return <FinalRoute><CustomerOperations /></FinalRoute>
-  if (pathname === '/dashboard') return <FinalRoute><MerchantOperations /></FinalRoute>
-  if (pathname === '/marketplace') return <FinalRoute><MarketplaceV1 /></FinalRoute>
-  if (pathname.startsWith('/provider/')) return <FinalRoute><ProviderV1 /></FinalRoute>
-  if (pathname.startsWith('/request/')) return <FinalRoute><RequestV1 /></FinalRoute>
-  if (pathname === '/sell') return <FinalRoute><MerchantProfileV1 /></FinalRoute>
-  if (pathname === '/verify') return <FinalRoute><VerificationPage /></FinalRoute>
-  if (pathname === '/payments') return <FinalRoute><PaymentsPage /></FinalRoute>
-  if (pathname === '/disputes') return <FinalRoute><DisputesPage /></FinalRoute>
-  if (pathname === '/admin') return <AuthProvider><AdminPage /></AuthProvider>
-  return <>
-    <AppV75 />
-    <SupportBot />
-  </>
+
+  if (pathname === '/support') return <SupportExperience />
+  if (pathname === '/account') return <CustomerOperations />
+  if (pathname === '/dashboard') return <MerchantOperations />
+  if (pathname === '/marketplace') return <MarketplaceV1 />
+  if (pathname.startsWith('/provider/')) return <ProviderV1 />
+  if (pathname.startsWith('/request/')) return <RequestV1 />
+  if (pathname === '/sell') return <MerchantProfileV1 />
+  if (pathname === '/verify') return <VerificationPage />
+  if (pathname === '/payments') return <PaymentsPage />
+  if (pathname === '/disputes') return <DisputesPage />
+  if (pathname === '/admin') return <AdminPage />
+
+  // The 3D support robot belongs only on the public Bizora Commerce homepage.
+  if (pathname === '/') return <><AppV75 /><SupportBot /></>
+
+  return <AppV75 />
 }
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <BrowserRouter>
-      <Root />
+      <AuthProvider>
+        <Root />
+      </AuthProvider>
     </BrowserRouter>
   </React.StrictMode>,
 )
