@@ -37,6 +37,9 @@ const thread=await call(`/api/requests/${rid}/messages`,{token:merchant.token});
 await call(`/api/requests/${rid}`,{token:customer.token,method:'PATCH',body:{status:'accepted'}})
 
 const payment=await call('/api/payments',{token:customer.token,method:'POST',body:{requestId:rid,amount:15000}});if(payment.payment.status!=='held')throw new Error('escrow was not held')
+await call(`/api/requests/${rid}`,{token:merchant.token,method:'PATCH',body:{status:'in_progress'}})
+await call(`/api/requests/${rid}`,{token:merchant.token,method:'PATCH',body:{status:'completed'}})
+const completed=await call(`/api/requests/${rid}`,{token:customer.token});if(completed.request.status!=='completed')throw new Error('job did not reach completed status')
 const released=await call(`/api/payments/${payment.payment.id}/release`,{token:customer.token,method:'POST'});if(released.payment.status!=='released')throw new Error('escrow release failed')
 await call('/api/disputes',{token:customer.token,method:'POST',body:{paymentId:payment.payment.id,reason:'Automated inspection dispute used to verify the resolution workflow.'}})
 const support=await call('/api/support/tickets',{token:customer.token,method:'POST',body:{message:'I want to speak with a human support agent.'}});if(!support.ticket?.id)throw new Error('support ticket failed')
