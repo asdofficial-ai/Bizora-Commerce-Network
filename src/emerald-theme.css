@@ -1,0 +1,143 @@
+:root{
+  --bg:#04100b;
+  --panel:#0b1713;
+  --panel2:#101d18;
+  --muted:#90a39a;
+  --line:rgba(122,191,155,.16);
+  --primary:#52f0ac;
+  --cyan:#d6ad66;
+  --green:#52f0ac;
+  --shadow:0 24px 80px rgba(0,0,0,.34);
+}
+html,body,#root{background:#04100b;color:#f2f7f4}
+body{background:radial-gradient(circle at 50% -20%,rgba(51,128,91,.14),transparent 32%),#04100b}
+
+/* Homepage mobile corrections */
+@media(max-width:560px){
+  .hr-header{background:rgba(3,11,8,.96);border-bottom-color:rgba(92,170,130,.15)}
+  .hr-header-inner{height:64px;gap:8px}
+  .hr-logo-mark{width:37px;height:37px;border-radius:11px;font-size:20px}
+  .hr-logo b{font-size:16px}.hr-logo small{font-size:9px}
+  .hr-header-actions{gap:7px}
+  .hr-signin{font-size:11px!important;width:auto!important;height:40px!important;padding:0 12px!important;display:inline-flex!important;gap:6px!important;border-radius:12px!important;white-space:nowrap}
+  .hr-signin svg{width:15px;height:15px}
+  .hr-menu{width:40px;height:40px;border-radius:12px;background:#0a1712}
+  .hr-nav{top:70px}
+  .hr-hero-grid{padding:42px 0 72px}
+  .hr-hero-copy h1{font-size:42px;line-height:1.04;margin-top:12px}
+  .hr-hero-copy>p{font-size:14px;line-height:1.65}
+  .hr-search-panel{margin-top:-30px;padding:10px;border-radius:18px}
+  .hr-search{grid-template-columns:auto minmax(0,1fr) auto!important;gap:8px!important;padding:6px 6px 6px 12px!important}
+  .hr-search input{min-width:0;padding:10px 2px;font-size:14px}
+  .hr-search button{grid-column:3;grid-row:1;padding:11px 14px!important;border-radius:11px;white-space:nowrap}
+  .hr-how article::after{display:none!important;content:none!important}
+  .hr-how-grid{gap:10px}
+  .hr-how article{padding:16px}
+  .hr-how article>span{margin-bottom:18px}
+  .hr-section-head>a{align-self:flex-start}
+}
+
+/* Shared emerald surfaces */
+.site-header,.final-header,.clean-support-header{background:rgba(3,11,8,.92)!important;border-bottom-color:rgba(112,190,150,.14)!important}
+.page-bg,.auth-page,.dashboard-page,.onboarding-page,.final-page,.final-loading,.clean-support-page{background:radial-gradient(circle at 60% -12%,rgba(47,126,88,.13),transparent 30%),#04100b!important;color:#f2f7f4!important}
+footer,.hr-footer{background:#020805!important;border-top-color:rgba(112,190,150,.12)!important}
+
+.brand-mark,.final-brand>span,.clean-support-logo{
+  background:linear-gradient(145deg,#72f5bd,#39d794 62%,#157757)!important;
+  color:#062116!important;
+  box-shadow:0 10px 28px rgba(52,213,143,.17)!important;
+}
+.brand b,.clean-support-brand b{color:#a9bab1!important}
+.button,.final-primary,.verify-buttons button,.clean-login,.clean-signin-cta{
+  background:linear-gradient(135deg,#72f5bd,#3bd895)!important;
+  color:#062016!important;
+  box-shadow:0 10px 28px rgba(47,208,137,.14)!important;
+}
+.button.secondary{background:#102019!important;color:#e7f3ed!important;border-color:#29493b!important;box-shadow:none!important}
+.icon-btn,.final-back,.clean-icon-button{background:#0b1713!important;border-color:#223d32!important;color:#d9e8e0!important}
+
+/* Inputs and panels */
+.auth-card,.panel,.metric-card,.request-card,.onboarding-card,.service-list,.provider-card,.final-panel,.final-metric,.final-actions>a,.market-v1-card,.market-v1-search,.clean-chat-card{
+  background:linear-gradient(180deg,#0d1a15,#09130f)!important;
+  border-color:rgba(116,188,151,.16)!important;
+  box-shadow:none!important;
+}
+.auth-tabs,.auth-card input,.auth-card select,.request-card input,.request-card select,.request-card textarea,.onboarding-card input,.onboarding-card select,.onboarding-card textarea,.message-form input,.request-controls input,.request-send input,.payment-create select,.payment-create input,.payment-create textarea,.admin-login input,.clean-compose input{
+  background:#07130e!important;
+  border-color:#254338!important;
+  color:#f2f7f4!important;
+}
+.auth-card input:focus,.auth-card select:focus,.request-card input:focus,.request-card select:focus,.request-card textarea:focus,.onboarding-card input:focus,.onboarding-card select:focus,.onboarding-card textarea:focus,.message-form input:focus,.payment-create select:focus,.payment-create input:focus,.payment-create textarea:focus,.admin-login input:focus,.clean-compose input:focus{border-color:#52f0ac!important}
+
+/* Old purple/blue accents -> emerald */
+.auth-tabs button.active,.chip.active,.market-v1-chips button.active{
+  background:#173e2d!important;border-color:#2f7a57!important;color:#dff8eb!important
+}
+.status-pill,.final-status,.clean-ticket-status{
+  background:rgba(82,240,172,.08)!important;
+  border-color:rgba(82,240,172,.18)!important;
+  color:#9ef2c8!important;
+}
+.metric-icon,.ai-orb,.provider-v1-avatar,.provider-v1-big-avatar,.verification-mark,.clean-ai-avatar,.clean-welcome-icon{
+  background:linear-gradient(135deg,#153c2b,#2bbd81)!important;
+  color:#b8f7d7!important;
+  box-shadow:none!important;
+}
+.ai-action,.message.mine,.request-message.mine,.clean-message.customer{
+  background:rgba(82,240,172,.08)!important;
+  border-color:rgba(82,240,172,.16)!important;
+}
+.text-link,.provider-v1-bottom span:last-child,.final-kicker,.clean-kicker{color:#69e9ac!important}
+.roadmap-items span.done svg,.provider-v1-meta svg,.final-metric svg,.final-actions>a>svg:first-child,.clean-support-note svg{color:#52f0ac!important}
+
+/* Marketplace / provider pages */
+.market-v1-search{border-radius:16px!important}
+.market-v1-search svg{color:#75b696!important}.market-v1-search input{color:#eef7f2!important}
+.market-v1-chips button{background:#0b1713!important;border-color:#203b30!important;color:#94a89e!important}
+.market-v1-card:hover,.provider-card:hover,.final-actions>a:hover{border-color:rgba(82,240,172,.34)!important}
+.provider-v1-demo{background:#102019!important;border-color:#29483b!important;color:#9fb2a8!important}
+.provider-v1-verified{color:#93efc0!important;background:rgba(82,240,172,.07)!important;border-color:rgba(82,240,172,.18)!important}
+.request-controls button,.request-pay-link,.request-send button{background:linear-gradient(135deg,#54e8a6,#2ebc7e)!important;color:#062016!important}
+.request-message,.message{background:#0f2019!important;border-color:#213c31!important}
+
+/* Account, merchant, payments, disputes, verification */
+.final-header-inner{min-height:72px}.final-user button{background:#0c1914!important;border-color:#244236!important;color:#b8c8c0!important}
+.final-metric,.final-actions>a,.final-panel{border-radius:20px!important}
+.final-status.held{background:rgba(214,173,102,.09)!important;border-color:rgba(214,173,102,.22)!important;color:#e9c98c!important}
+.final-status.released,.final-status.verified,.final-status.resolved{background:rgba(82,240,172,.08)!important;border-color:rgba(82,240,172,.18)!important;color:#9bf0c6!important}
+.final-note{background:rgba(82,240,172,.06)!important;border-color:rgba(82,240,172,.16)!important;color:#a9e9c8!important}
+.final-warning{background:rgba(214,173,102,.07)!important;border-color:rgba(214,173,102,.18)!important;color:#e5c78f!important}
+.payment-row button{background:#0e2119!important;border-color:#2f6049!important;color:#8be7b8!important}
+.sandbox-pill{color:#e4c384!important;border-color:rgba(214,173,102,.22)!important;background:rgba(214,173,102,.07)!important}
+
+/* Customer support */
+.clean-support-page{background:#04100b!important}
+.clean-chat-card{border-color:#244036!important}
+.clean-chat-head,.clean-compose-area{background:#0b1813!important;border-color:#203a30!important}
+.clean-chat-body{background:linear-gradient(180deg,#07140f,#05100b)!important}
+.clean-human-button,.clean-quick-actions button,.clean-inline-actions button{background:#102019!important;border-color:#29463a!important;color:#cce0d6!important}
+.clean-quick-actions button:hover,.clean-inline-actions button:hover{border-color:#52f0ac!important}
+.clean-compose button{background:linear-gradient(135deg,#58eaaa,#31c986)!important;color:#062016!important}
+.clean-message{background:#102019!important;border-color:#213b31!important}
+.clean-message.customer{background:#123323!important}.clean-message.agent{background:rgba(82,240,172,.07)!important}
+
+/* Legacy route pages that still render through AppV75 */
+.site-header{background:rgba(3,11,8,.94)!important}.brand-mark{border-radius:12px!important}
+.nav{color:#b2c0b8!important}.nav>a:hover,.nav>a.active{color:#52f0ac!important}
+.page-intro h1,.provider-profile h1,.dash-head h1,.auth-copy h1{color:#f2f7f4!important}
+.eyebrow,.kicker{color:#6fe2aa!important}.eyebrow{background:rgba(82,240,172,.06)!important;border-color:rgba(82,240,172,.16)!important}
+.market-search{background:#0b1813!important;border-color:#244036!important}.market-search svg{color:#75a78f!important}
+.chip{background:#0b1713!important;border-color:#203a30!important;color:#94a69d!important}
+.request-item,.roadmap-items span{background:#0b1713!important;border-color:#203a30!important}
+
+/* Support robot stays the only homepage support entry, but blends with the new theme */
+.support-bot-label{background:rgba(4,16,11,.92)!important;border-color:rgba(82,240,172,.28)!important;color:#bdf6d8!important}
+.support-bot-bubble{background:rgba(5,20,14,.95)!important;border-color:rgba(82,240,172,.24)!important;color:#effaf4!important}
+
+@media(max-width:760px){
+  .final-header-inner{height:64px!important}.final-brand b{font-size:14px!important}
+  .clean-support-header-inner{min-height:64px!important}
+}
+@media(max-width:560px){
+  .support-bot-wrap{right:10px!important;bottom:12px!important}.support-bot-button{width:78px!important;min-height:98px!important}.support-bot-image{width:72px!important;height:72px!important}.support-bot-glow{width:68px!important;height:68px!important;bottom:25px!important}.support-bot-label{font-size:8px!important;padding:5px 8px!important}
+}
