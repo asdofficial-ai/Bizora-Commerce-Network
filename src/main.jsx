@@ -2,6 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter, useLocation } from 'react-router-dom'
 import AppV75 from './AppV75.jsx'
+import HomeRedesign from './HomeRedesign.jsx'
 import SupportExperience from './SupportExperience.jsx'
 import SupportBot from './SupportBot.jsx'
 import { AdminPage, DisputesPage, PaymentsPage, VerificationPage } from './FinalExperience.jsx'
@@ -28,8 +29,7 @@ function Root() {
   if (pathname === '/disputes') return <DisputesPage />
   if (pathname === '/admin') return <AdminPage />
 
-  // The 3D support robot belongs only on the public Bizora Commerce homepage.
-  if (pathname === '/') return <><AppV75 /><SupportBot /></>
+  if (pathname === '/') return <><HomeRedesign /><SupportBot /></>
 
   return <AppV75 />
 }
