@@ -7,6 +7,12 @@
 .support-bot-button:hover .support-bot-image{animation-play-state:paused;transform:perspective(500px) rotateY(-8deg) rotateZ(-1deg) scale(1.035)}
 .support-bot-button:active .support-bot-image{animation-play-state:paused;transform:scale(.94)}
 .support-bot-bubble{pointer-events:none;margin:0 4px 8px 0;background:rgba(10,22,39,.94);border:1px solid rgba(102,204,255,.23);box-shadow:0 14px 38px rgba(0,0,0,.35);backdrop-filter:blur(14px);color:#eef8ff;font-size:12px;font-weight:700;padding:9px 12px;border-radius:14px 14px 4px 14px;animation:supportBubble .28s ease-out both;max-width:150px}
+
+/* The homepage uses the small 3D robot as the single support entry point. */
+.hero-card-wrap,.support-band{display:none!important}
+.hero-grid{grid-template-columns:minmax(0,1fr)!important}
+.hero-copy{max-width:780px}
+
 .role-picker{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:14px}
 .role-picker button{border:1px solid var(--line);background:#0a1424;color:#98a6ba;padding:12px;border-radius:11px}
 .role-picker button.active{background:linear-gradient(135deg,#7463ff,#5578ff);border-color:transparent;color:white}
